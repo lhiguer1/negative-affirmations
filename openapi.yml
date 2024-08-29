@@ -1,0 +1,66 @@
+openapi: "3.0.3"
+info:
+  title: Negative Affirmations API
+  description: Negative affirmations for when you are feeling gloomy.
+  version: "1.0"
+servers:
+  - url: https://api.server.test/
+
+tags:
+  - name: affirmations
+    description: For when you are feeling sad.
+
+paths:
+  /affirmations:
+    get:
+      tags:
+        - affirmations
+      summary: Retrieve a paginated list of negative affirmations.
+      parameters:
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+          description: The page of results to retrieve.
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 5
+            minimum: 1
+            maximum: 10
+          description: The number of affirmations to retrieve per page.
+      responses:
+        "200":
+          description: A paginated list of negative affirmations.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  totalAffirmations:
+                    type: integer
+                    description: The total number of available affirmations.
+                    example: 25
+                  totalPages:
+                    type: integer
+                    description: The total number of pages.
+                    example: 5
+                  currentPage:
+                    type: integer
+                    description: The current page of the result set.
+                    example: 1
+                  limit:
+                    type: integer
+                    description: The number of affirmations returned per page.
+                    example: 1
+                  affirmations:
+                    type: array
+                    example:
+                      - I am a failure.
+                    items:
+                      type: string

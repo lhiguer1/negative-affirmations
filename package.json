@@ -1,0 +1,20 @@
+{
+  "name": "negative-affirmations",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node --require dotenv/config ./bin/www",
+    "lint": "prettier --check .",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "morgan": "~1.9.1",
+    "swagger-ui-express": "^5.0.1",
+    "yaml": "^2.5.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  }
+}
