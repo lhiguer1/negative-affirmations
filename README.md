@@ -7,7 +7,7 @@ Negative Affirmations for when you are feeling sad and gloomy.
 #### Get all items
 
 ```http
-  GET /affirmations
+GET /affirmations
 ```
 
 | Parameter | Type      | Description                                      |
@@ -18,7 +18,7 @@ Negative Affirmations for when you are feeling sad and gloomy.
 #### Example Response
 
 ```http
-    GET /affirmations?page=1&limit=5
+GET /affirmations?page=1&limit=5
 ```
 
 ```json
